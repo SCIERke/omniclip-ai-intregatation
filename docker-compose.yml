@@ -1,0 +1,14 @@
+
+services:
+  omniclip:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: omniclip-dev
+    ports:
+      - "8080:8080"
+    environment:
+      - HOST=0.0.0.0
+    volumes:
+      - .:/app
+      - /app/node_modules

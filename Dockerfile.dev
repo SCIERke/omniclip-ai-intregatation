@@ -1,0 +1,16 @@
+FROM node:lts-slim
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+ENV HOST=0.0.0.0
+ENV PORT=8080
+
+
+EXPOSE 8080
+
+# CMD ["npx", "turtle-standard-watch", "--port", "8080", "--host", "0.0.0.0"]
+CMD ["npm", "start"]
