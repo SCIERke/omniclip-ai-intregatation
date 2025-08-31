@@ -4,3 +4,7 @@
 
 # Local Netlify folder
 .netlify
+
+__pycache__
+
+playground
