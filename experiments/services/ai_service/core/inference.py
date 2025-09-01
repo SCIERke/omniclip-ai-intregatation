@@ -78,8 +78,10 @@ class WanModel:
         subprocess.run(cmd, check=True)
 
 
-@app.local_entrypoint()
-def main(prompt: str):
-    model = WanModel()
-    job = model.generate.remote(prompt)
-    job.result()
+# This is Example Usage
+
+# @app.local_entrypoint()
+# def main(prompt: str):
+#     model = WanModel()
+#     job = model.generate.remote(prompt)
+#     job.result()
