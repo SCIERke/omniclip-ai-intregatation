@@ -1,0 +1,13 @@
+FROM node:lts-slim
+
+WORKDIR /app
+
+# ติดตั้ง dependency
+COPY package*.json ./
+RUN npm install
+
+# คัดลอก source code
+COPY . .
+EXPOSE 8080
+
+CMD ["npm", "start"]
