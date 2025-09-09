@@ -30,6 +30,9 @@ import {ExportPanel} from "./components/omni-timeline/views/export/panel.js"
 import {MediaPlayerPanel} from "./components/omni-timeline/views/media-player/panel.js"
 import {ExportConfirmModal, ExportInProgressOverlay} from './components/omni-timeline/views/export/view.js'
 
+import { AIPanel } from './components/omni-ai/panel.js'
+
+
 posthog.init('phc_CMbHMWGVJSqM1RqGyGxWCyqgaSGbGFKl964fIN3NDwU',
 	{
 			api_host: 'https://eu.i.posthog.com',
@@ -44,6 +47,7 @@ export function setupContext(projectId: string) {
 	omnislate.context = new OmniContext({
 		projectId,
 		panels: {
+			AIPanel,
 			TimelinePanel,
 			MediaPanel,
 			MediaPlayerPanel,
@@ -146,7 +150,7 @@ const router = new HashRouter({
 			collaboration.disconnect()
 		}
 		if(!registered) {
-			register_to_dom({OmniTimeline, OmniText, OmniMedia, ConstructEditor, OmniFilters, OmniTransitions, OmniAnim})
+			register_to_dom({OmniTimeline, OmniText, OmniMedia, ConstructEditor, OmniFilters, OmniTransitions, OmniAnim })
 			registered = true
 		}
 		const omnislate = setupContext(projectId)
