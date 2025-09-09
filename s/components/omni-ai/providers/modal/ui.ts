@@ -268,7 +268,7 @@ export const ModalUI = shadow_component((use) => {
                 // cancel function (disable why waiting server to start)
               }}
             >
-              Reset
+              Cancel
             </sl-button>
 
             <sl-button
