@@ -1,0 +1,19 @@
+
+services:
+  node-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    container_name: node-server
+    ports:
+      - "8080:8080"
+    environment:
+      - SHELL=/bin/bash
+    volumes:
+      - .:/app                # source code sync
+      - /app/node_modules     # ให้ node_modules อยู่ใน container
+      - shared-build:/app/x   # สร้าง shared volume ไว้เก็บ build
+
+
+volumes:
+  shared-build:
