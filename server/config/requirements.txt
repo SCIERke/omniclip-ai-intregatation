@@ -5,3 +5,5 @@ huggingface_hub
 pathlib
 pillow
 pydantic-extra-types
+dotenv
+regex
